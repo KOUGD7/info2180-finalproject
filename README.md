@@ -1,6 +1,6 @@
-# info2180-project2
+# INFO2180-Project2
 
-This is INFO2180 FinalProject for :
+This is INFO2180 Final Project for :
 
 
 Micheal Goldson
