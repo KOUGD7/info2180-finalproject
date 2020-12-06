@@ -1,13 +1,13 @@
 <h1 class ="formheader">Create Issue</h1>
 <form action = "http://localhost/info2180-finalproject/IssueSubmission.php" method="post" onsubmit="return validate();">
     <label for="ti">Title:</label>
-    <input type="text" id="ti" class ="input" name="title">
+    <input type="text" id="ti" class ="input" name="title" required>
     
     <label for="de">Description</label>
-    <input type="text" id="de" class ="input" name="description"><br>
+    <input type="text" id="de" class ="input" name="description" required><br>
     
     <label for="as">Assigned To</label>
-    <input type="text" id="as" class ="input" name="assignedTo"><br>
+    <input type="text" id="as" class ="input" name="assignedTo" required><br>
     
     <label for="ty">Type</label>
     <select name="type" id="ty" class ="input">
