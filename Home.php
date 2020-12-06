@@ -10,17 +10,11 @@ $email = $_SESSION['email'];
 //echo $email;
 //echo $uid;
 
-$host = 'localhost';
-$username = 'lab5_user';
-$password = 'password123';
-$dbname = 'bugmeissue';
+require_once 'config.php';
 
-
-$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-$stmt = $conn->query("SELECT * FROM Issues");
+$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
+$stmt = $conn->query("SELECT * FROM Issues join Users on Issues.assigned_to = Users.id");
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-#print_r($results);
 
 ?>
 
@@ -51,17 +45,19 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($results as $row): ?>
           <tr>
-            <td><?= $row['title']; ?></td>
+
+            <td><?= "#".$row['id']; ?>
+            <a class="issuedetail" href=""><?= $row['title']; ?></a>
+            </td>
+
             <td><?= $row['type']; ?></td>
             <td><?= $row['status']; ?></td>
-            <td><?= $row['assigned_to']; ?></td>
+            <td><?= $row['firstname']." ".$row['lastname']; ?></td>
             <td><?= $row['created']; ?></td>
           </tr>
         <?php endforeach; ?>
     </table>
 </div>
-
-
   
 
     

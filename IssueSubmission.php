@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $priority= $_POST['priority'];
     $date = date('m/d/Y h:i:s', time());
 
-    $assignedTo = 1;
+    #$assignedTo = 1;
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);
@@ -27,7 +27,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $sql= "INSERT INTO Issues (title, description, type, priority, status, assigned_to, created_by, created, updated)
                             VALUES('$title', '$description', '$type', '$priority', 'Open', $assignedTo, $uid, now(), now())";
         $conn->exec($sql);
-        echo "New record created successfully";
+        $message = "New record created successfully";
+        echo "<script>alert('$message');</script>";
 
     } 
    catch (PDOException $pe) {
