@@ -84,6 +84,32 @@ $( document ).ready(function() {
         httpRequest.open('GET', url + "NewIssue");
         httpRequest.send();
      });
+
+     $(document).on('click', '[name="issuelink"]', function(){
+        var value = $(this).attr("value");
+        alert(value);
+
+        var url = "http://localhost/info2180-finalproject/IssueDetail.php?issueid="
+        httpRequest.onreadystatechange = getDetails;
+        httpRequest.open('GET', url + value);
+        httpRequest.send();
+
+     });
+
+     function getDetails() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                var response = httpRequest.responseText;
+                result.innerHTML = response;
+                      
+            } 
+            else {
+                console.log(httpRequest.status)
+                alert('There was a problem with the request.');
+             }
+        }
+    }
+
     
 
 });

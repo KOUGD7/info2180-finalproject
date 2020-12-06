@@ -47,11 +47,13 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($results as $row): ?>
           <tr>
-
-            <td><?= "#".$row['Issueid']; ?>
-            <a class="issuedetail" href=""><?= $row['title']; ?></a>
+        
+            <td> 
+                <?= "#".$row['Issueid']; ?>
+                <a class="issuedetail" id="issuelink" name="issuelink" value =<?=$row['Issueid']?>>
+                <?= $row['title']; ?></a>
             </td>
-
+        
             <td><?= $row['type']; ?></td>
             <td><?= $row['status']; ?></td>
             <td><?= $row['firstname']." ".$row['lastname']; ?></td>
