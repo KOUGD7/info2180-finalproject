@@ -14,7 +14,6 @@ $email = $_SESSION['email'];
 
 require_once 'config.php';
 
-
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
     $stmt = $conn->query("SELECT * FROM Issues WHERE id = $query");
