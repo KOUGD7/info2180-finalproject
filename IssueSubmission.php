@@ -20,7 +20,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $valid = False;
 
-
     if(!preg_match("^[a-zA-Z ]*^", $title)){
         echo "Title not valid!";
     }
@@ -34,6 +33,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         echo "Issue Created successfully!";
         $valid = True;
         }return $valid;
+
+    $title = filter_var($title, FILTER_SANITIZE_STRING);
+    $description = filter_var($description, FILTER_SANITIZE_STRING);
+
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);
