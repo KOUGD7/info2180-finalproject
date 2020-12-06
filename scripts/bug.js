@@ -77,54 +77,13 @@ $( document ).ready(function() {
              }
         }
     }
+
+
+    $(document).on('click', '[name="newissue2"]', function(){
+        httpRequest.onreadystatechange = IssueClick;
+        httpRequest.open('GET', url + "NewIssue");
+        httpRequest.send();
+     });
     
-    /*
-    //LOGOUT AJAX
-    logout.on('click', function() {
-        var url = "http://localhost/info2180-finalproject/login.php";
-        httpRequest.onreadystatechange = LogoutClick;
-        httpRequest.open('GET', url);
-        httpRequest.send();
-    });
-
-
-    function LogoutClick() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                var response = httpRequest.responseText;
-                result.innerHTML = response;    
-            } 
-            else {
-                console.log(httpRequest.status)
-                alert('There was a problem with the request.');
-             }
-        }
-    }*/
-
-    /*let btn = $("form .btn");
-
-    //LOGIN AJAX
-     btn.on('click', function() {
-        var username = $('#username').val();
-        var password = $('#password').val();
-        console.log(username + " " + password)
-        var postStr = "username=" + username + "&" + "password=" + password
-        var url = "http://localhost/info2180-finalproject/login.php?"
-        httpRequest.onreadystatechange = LoginClick;
-        httpRequest.open('GET', url+postStr);
-        httpRequest.send();
-    });
-
-    function LoginClick() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                var response = httpRequest.responseText;
-                display.innerHTML = response;        
-            }
-            else {
-                alert('There was a problem with the request.');
-            }
-        }
-    } */
 
 });

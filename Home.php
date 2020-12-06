@@ -25,27 +25,29 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="mainheader">
-        <h1>Issues</h1>
-        <button class="create">Create New Issue</button>
-    </div>
-
-    <div class="navBar">
-        <label>Filter by:</label>
-        <ul>
+    <div>
+        <h1 class ="formheader">Issues</h1>
+        <div class="filterbar">
+            <label>Filter by:</label>
             <li><a href="">ALL</a></li>
             <li><a href="">OPEN</a></li>
             <li><a href="">MY TICKETS</a></li>
-        </ul>
+        </div>
     </div>
-    <div class="issues">
-        <table class="issueLog">
-            <tr>
-                <th>Title</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th>Assigned To</th>
-                <th>Created</th>            
-            </tr>
+    <div>
+        <button class="btn-primary" id="newissue2" name= "newissue2">Create New Issue</button>
+    </div>
+</div>
+
+<div class="issues">
+    <table class="issueLog" id = "issuetab">
+        <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+            <th>Created</th>            
+        </tr>
 
         <?php foreach ($results as $row): ?>
           <tr>
@@ -56,8 +58,8 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['created']; ?></td>
           </tr>
         <?php endforeach; ?>
-        </table>
-    </div>
+    </table>
+</div>
 
 
   

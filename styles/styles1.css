@@ -13,6 +13,7 @@ header{
     
 
 }
+
 *{
     margin:0;
     padding:0;
@@ -21,13 +22,13 @@ header{
     text-decoration: none;
     
 }
-body {
+/* body {
     background: none;
     max-height: 85%;
     margin:0;
     padding:0;
 
-}
+} */
 
 
 .sidebar{
@@ -37,9 +38,9 @@ body {
 }
 
  .sidebar{
-    position:fixed;
-    width:200px;
-    height:100%;
+    /* position:fixed;
+    width:20%;
+    height:100%; */
     background-color: #f0f0f0;
     display:flex;
     flex-direction: row;
@@ -66,20 +67,18 @@ body {
     color:black;
 }
 
- .user-form{
+.user-form{
     height: 100%;
-    width:100%;
-    margin-left: 250px;
+    width: 100%; 
+    
 }
 
-
- .user-form h1{
-    padding: 20px;
+/*  .user-form h1{
+    padding: 20px; 
     background: #fff;
     color:black;
-    
-   
-}
+} */
+
  .btn-primary{
     background-color: rgb(68, 143, 187);
     padding: 6px 16px;
@@ -89,57 +88,120 @@ body {
     text-align: center;
     width:150px;
 }
- #ti{
+
+/*----------------------MG------------------------*/
+:root{
+    --white: whitesmoke;
+    --green: #3f9458;
+    --lightblue: #0b838b;
+    --defaultFontFamily: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+body{
+    background-color:aliceblue;
+    font-family: var(--defaultFontFamily);
+}
+
+.container{
+    display: grid;
+    /* grid-template-columns: auto auto;
+    grid-template-rows: repeat(2, minmax(min-content, max-content)); */
+    grid-template-columns: 200px auto;
+    grid-template-rows: minmax(min-content, max-content) minmax(900px, max-content);
+    grid-gap: 8px;
+    padding: 8px;
+  }
+
+header{
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.sidebar{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.user-form{
+    grid-column: 2;
+    grid-row: 2;
+    padding: 20px;
+}
+
+
+.filterbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mainheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filterbar li{
+    margin-left: 15px;
+    font-size: medium;
+
+}
+.formheader{
+    text-align: left;
+}
+
+.input{
     width: 30em;
     height: 2.2em;
     border-radius: 5px;
     margin-top:4px;
     margin-bottom:8px;
     background-color: #f0f0f0;
-    
-}
-#de{
-    width: 30em;
-    height: 5em;
-    border-radius: 5px;
-    padding:30px;
-    margin-top:4px;
-    background-color: #f0f0f0;
-   
-}
-#as{
-    width: 30em;
-    height: 2.2em;
-    border-radius: 5px;
-    margin-top:4px;
-    background-color: #f0f0f0;
-}
-#ty{
-    width: 30em;
-    height: 2.2em;
-    border-radius: 5px;
-    background-color: #f0f0f0;
 }
 
-#pr{
-    width: 30em;
-    height: 2.2em;
-    border-radius: 5px;
-    margin-top:4px;
-    background-color: #f0f0f0;
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
+  
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+  
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+  
+table tr:hover {
+    background-color: #ddd;
+}
+
+#issuetab th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--lightblue);
+    color: white;
+    border-collapse: collapse;
+}
+
+.issues{
+    padding-top: 20px;
+}
+
+/*----------------------------------------------*/
+
 form{
     display:flex;
     flex-direction: column;
 }
+
 img{
     float:left;
     width:10%;
     margin-right:10px;   
-}
-
-#hometest{
-    font-size: 500px;
 }
 
 

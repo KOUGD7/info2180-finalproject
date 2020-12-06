@@ -10,29 +10,25 @@
 
 </head>
 <body>
-    <header>
-        <p> BugMe Issue Tracker</p>
+    <div class="container">
+        <header>
+            <p> BugMe Issue Tracker</p>
+        </header>
 
-    </header>
-
-    <div class="sidebar">
-        <ul>
-            <li><img src="img/home.png" width="25px" height="25px"  /><a id="home" href="#">Home</a></li>
-            <li><img src="img/add.png" width="25px" height="25px"  /><a id="add" href="#">Add User</a></li>
-            <li><img src="img/issue.png" width="25px" height="25px"  /><a id="newissue" href="#">New Issue</a></li>
-            <li><img src="img/log.png" width="22px" height="22px"  /><a id="logout" href="http://localhost/info2180-finalproject/index.php">Logout</a></li>
-        </ul>
-    </div>
-
-    <main>
-         <div>
-            <div id="result" class="user-form">
-
-            <?php include 'Home.php'?>
-            
-            </div>
+        <div class="sidebar">
+            <ul>
+                <li><img src="img/home.png" width="25px" height="25px"  /><a id="home" href="#">Home</a></li>
+                <li><img src="img/add.png" width="25px" height="25px"  /><a id="add" href="#">Add User</a></li>
+                <li><img src="img/issue.png" width="25px" height="25px"  /><a id="newissue" href="#">New Issue</a></li>
+                <li><img src="img/log.png" width="22px" height="22px"  /><a id="logout" href="http://localhost/info2180-finalproject/index.php">Logout</a></li>
+            </ul>
         </div>
-    </main>
 
+        <main>
+            <div id="result" class="user-form">
+                <?php include 'Home.php'?> 
+            </div>
+        </main>
+    </div>
 </body>
 </html>
