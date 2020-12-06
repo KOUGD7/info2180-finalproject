@@ -16,6 +16,25 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $pwd = password_hash($password, PASSWORD_DEFAULT);
 
+    $valid = False;
+
+    if(!preg_match("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$^", $firstname)){
+        echo "Firstname not valid!";
+    }
+    else if(!preg_match("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$^", $lastname)){
+        echo "Lastname not valid!";
+    }
+    else if(!preg_match("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$^", $password)) {
+        echo "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters";
+    }
+    else if(!preg_match("^[a-zA-Z ]*$^", $email)){
+        echo "Must be in the following order: characters@characters.domain!";
+    }
+    else{
+        echo "User Added successfully!";
+        $valid = True;
+        }return $valid;
+
     try {
     
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);

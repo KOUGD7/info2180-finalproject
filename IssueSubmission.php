@@ -13,10 +13,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $description = $_POST['description'];
     $assignedTo = $_POST['assignedTo'];
     $type= $_POST['type'];
-    $priority= $_POST['priority'];
+    $priority= $_POST['priority']; 
     $date = date('m/d/Y h:i:s', time());
 
     #$assignedTo = 1;
+
+    $valid = False;
+
+
+    if(!preg_match("^[a-zA-Z ]*^", $title)){
+        echo "Title not valid!";
+    }
+    else if(!preg_match("^[a-zA-Z ]*$^", $description)){
+        echo "Description not valid!";
+    }
+    #else if(!preg_match("^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$^", $date)) {
+    #    echo "Enter valid date [Format:yyyy-mm-dd]!^";
+    # }
+    else{
+        echo "Issue Created successfully!";
+        $valid = True;
+        }return $valid;
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);

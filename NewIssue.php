@@ -33,17 +33,10 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </select><br>
     
     <label for="ty">Type</label>
-<<<<<<< HEAD
     <select name="type" id="ty" class ="input" required>
-    <option value="bug">Bug</option>
-    <option value="propsal">Proposal</option>
-    <option value="task">Task</option>
-=======
-    <select name="type" id="ty" class ="input">
     <option value="Bug">Bug</option>
     <option value="Propsal">Proposal</option>
     <option value="Task">Task</option>
->>>>>>> origin/MGOLDS
     </select><br>
 
 
