@@ -10,7 +10,7 @@
     <input type="text" id="as" class ="input" name="assignedTo" required><br>
     
     <label for="ty">Type</label>
-    <select name="type" id="ty" class ="input">
+    <select name="type" id="ty" class ="input" required>
     <option value="bug">Bug</option>
     <option value="propsal">Proposal</option>
     <option value="task">Task</option>
@@ -18,7 +18,7 @@
 
 
     <label for="pr">Priority</label>
-    <select name="priority" id="pr" class ="input">
+    <select name="priority" id="pr" class ="input" required>
     <option value="Minor">Minor</option>
     <option value="Major">Major</option>
     <option value="Critical">Critical</option>
