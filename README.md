@@ -2,8 +2,7 @@
 
 This is INFO2180 FinalProject for :
 
-
-Micheal Goldson
+Michael Goldson
 Jhevoy Jacas
 Deidre-Ann Jemison
 Jason Smith
