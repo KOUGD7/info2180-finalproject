@@ -50,7 +50,6 @@ CREATE TABLE `Issues` (
   `assigned_to` int(15) NOT NULL,
   `created_by` int(15) NOT NULL,
   `created` datetime,
-  `date_joined` datetime,
   `updated` datetime,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8mb4;

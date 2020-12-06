@@ -17,10 +17,10 @@ $dbname = 'bugmeissue';
 
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-$stmt = $conn->query("SELECT * FROM Issues WHERE assigned_to = $uid");
+$stmt = $conn->query("SELECT * FROM Issues");
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($results);
+#print_r($results);
 
 ?>
 

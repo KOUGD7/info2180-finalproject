@@ -1,5 +1,5 @@
 <h1>Create Issue</h1>
-<form action = "http://localhost/info2180-finalproject/Submission2.php" method="post" onsubmit="return validate();">
+<form action = "http://localhost/info2180-finalproject/IssueSubmission.php" method="post" onsubmit="return validate();">
     <label for="ti">Title:</label>
     <input type="text" id="ti" name="title">
     
