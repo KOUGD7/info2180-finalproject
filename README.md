@@ -1,9 +1,8 @@
-# INFO2180-Project2
+# info2180-project2
 
-This is INFO2180 Final Project for :
+This is INFO2180 FinalProject for :
 
-
-Micheal Goldson
+Michael Goldson
 Jhevoy Jacas
 Deidre-Ann Jemison
 Jason Smith

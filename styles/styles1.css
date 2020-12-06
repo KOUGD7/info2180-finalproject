@@ -1,0 +1,221 @@
+html{
+    font-size:18px;
+	color:#2D3748;
+	font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans", sans-serif;
+
+}
+header{
+    background-color: black;
+	color: #FFFFFF;
+	justify-content: center;
+    align-items: center;
+    padding:1em;
+    
+
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    list-style: none;
+    text-decoration: none;
+    
+}
+body {
+    background: none;
+    max-height: 85%;
+    margin:0;
+    padding:0;
+
+}
+
+
+.sidebar{
+    display:flex;
+    position:relative;
+    
+}
+
+ .sidebar{
+    position:fixed;
+    width:200px;
+    height:100%;
+    background-color: #f0f0f0;
+    display:flex;
+    flex-direction: row;
+   
+}
+
+ .sidebar ul li{
+    padding:5px;
+    border-top: 1px solid rgba(225,225,0,0.05);
+    
+}
+
+ .sidebar ul li a{
+    color:black;
+    display:block;
+}
+
+ 
+ .sidebar ul li:hover{
+    background:rgba(255, 255, 255, 0.76);
+}
+
+ .sidebar ul li:hover a{
+    color:black;
+}
+
+ .user-form{
+    height: 100%;
+    width:100%;
+    margin-left: 250px;
+}
+
+
+ .user-form h1{
+    padding: 20px;
+    background: #fff;
+    color:black;
+    
+   
+}
+ .btn-primary{
+    background-color: rgb(68, 143, 187);
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    width:150px;
+}
+ #ti{
+    width: 30em;
+    height: 2.2em;
+    border-radius: 5px;
+    margin-top:4px;
+    margin-bottom:8px;
+    background-color: #f0f0f0;
+    
+}
+#de{
+    width: 30em;
+    height: 5em;
+    border-radius: 5px;
+    padding:30px;
+    margin-top:4px;
+    background-color: #f0f0f0;
+   
+}
+#as{
+    width: 30em;
+    height: 2.2em;
+    border-radius: 5px;
+    margin-top:4px;
+    background-color: #f0f0f0;
+}
+#ty{
+    width: 30em;
+    height: 2.2em;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+#pr{
+    width: 30em;
+    height: 2.2em;
+    border-radius: 5px;
+    margin-top:4px;
+    background-color: #f0f0f0;
+}
+form{
+    display:flex;
+    flex-direction: column;
+}
+img{
+    float:left;
+    width:10%;
+    margin-right:10px;   
+}
+
+#hometest{
+    font-size: 500px;
+}
+
+
+/*Lando Css*/
+
+.logbody{
+    margin:0;
+    padding:0;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.loginbox{
+    border-radius: 10px;
+    width:320px;
+    height: 420px;
+    background: #000;
+    color:#fff;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 40px 30px;
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 20px; 
+}
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.loginbox input[type="submit"]{
+    border:none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #fff;
+}
+
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+.loginbox a:hover{
+    color:#ffc107;
+}
