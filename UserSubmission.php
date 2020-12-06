@@ -35,6 +35,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $valid = True;
         }return $valid;
 
+    $firstname = filter_var($str, FILTER_SANITIZE_STRING);
+    $lastname = filter_var($str, FILTER_SANITIZE_STRING);
+    $email = filter_var($str, FILTER_SANITIZE_EMAIL);
+
     try {
     
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);
