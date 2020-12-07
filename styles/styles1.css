@@ -80,7 +80,7 @@ header{
 } */
 
  .btn-primary{
-    background-color: rgb(68, 143, 187);
+    background-color: rgb(60, 179, 113);
     padding: 6px 16px;
     font-size: 14px;
     border-radius: 4px;
@@ -191,6 +191,7 @@ table tr:hover {
     padding-top: 20px;
 }
 
+
 /*----------------------------------------------*/
 
 form{
@@ -280,4 +281,83 @@ h1{
 
 .loginbox a:hover{
     color:#ffc107;
+}
+
+/*--------------------Jem------------------*/
+
+.xss-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 20% 80%;
+    grid-gap: 40px;
+}   
+
+.isu1{
+    grid-row:1; 
+    grid-column: 1/3; 
+}
+
+
+.isu2{
+    grid-row:2; 
+    grid-column: 1;  
+}
+
+
+.isu3{
+    grid-row:2; 
+    grid-column: 2;
+}
+
+.isu1 h1{
+    font-size: 32px;
+    color: black;
+    text-align: left;
+}
+
+.isu2 .is{
+    color: black;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.isu2 .des{
+    color: black;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-align: left
+}
+
+
+.isu3 .sidebox{
+  border: 2px solid #B0B0B0;  
+  border-radius: 2px;
+  background-color: #E2E8F0;
+  padding: 10px;
+  width: 250px;
+  font-family:  Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn .closed{
+    background-color: rgb(68, 143, 187);
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    width:250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn .progress{
+    background-color: rgb(60, 179, 113);
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    width:250px;
 }

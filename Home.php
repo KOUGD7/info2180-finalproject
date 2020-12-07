@@ -13,9 +13,11 @@ $email = $_SESSION['email'];
 require_once 'config.php';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
-$stmt = $conn->query("SELECT * FROM Issues join Users on Issues.assigned_to = Users.id");
-$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $conn->query("SELECT Issues.id as Issueid, Users.id as uid, title, type, status, firstname, lastname, created
+ FROM Issues join Users on Issues.assigned_to = Users.id");
 
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+#print_r($results)
 ?>
 
 <div class="mainheader">
@@ -45,11 +47,13 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($results as $row): ?>
           <tr>
-
-            <td><?= "#".$row['id']; ?>
-            <a class="issuedetail" href=""><?= $row['title']; ?></a>
+        
+            <td> 
+                <?= "#".$row['Issueid']; ?>
+                <a class="issuedetail" id="issuelink" name="issuelink" value =<?=$row['Issueid']?>>
+                <?= $row['title']; ?></a>
             </td>
-
+        
             <td><?= $row['type']; ?></td>
             <td><?= $row['status']; ?></td>
             <td><?= $row['firstname']." ".$row['lastname']; ?></td>
