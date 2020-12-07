@@ -33,7 +33,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </select><br>
     
     <label for="ty">Type</label>
-    <select name="type" id="ty" class ="input">
+    <select name="type" id="ty" class ="input" required>
     <option value="Bug">Bug</option>
     <option value="Propsal">Proposal</option>
     <option value="Task">Task</option>
@@ -41,7 +41,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <label for="pr">Priority</label>
-    <select name="priority" id="pr" class ="input">
+    <select name="priority" id="pr" class ="input" required>
     <option value="Minor">Minor</option>
     <option value="Major">Major</option>
     <option value="Critical">Critical</option>

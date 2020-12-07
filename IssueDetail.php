@@ -72,42 +72,51 @@ endforeach;
 
 ?>
 
-<main class="xss-info">
-    	<article>
-  			<h1><?= $dbtitle; ?></h1>
-    		<p>Issue #<?= $dbid; ?> </p>
+<div class="xss-container">
+    <div class="isu1">
+            <h1><?= $dbtitle; ?></h1>
+            <p class="is">Issue #<?= $dbid; ?> </p>
+        </div>
 
-    		<p> <?= $dbdescrip; ?> </p>
-
-    		<ul>
-            <li>Issue created on <?= $dbcreated; ?> by <?= $dbcreatef." ".$dbcreatel; ?></li>
-            <li>Last Updated on <?= $dbupdated; ?></li>
+        <div class="isu2">
+        	<p class="des"> <?= $dbdescrip; ?> </p>
+            <ul>
+                <li>Issue created on <?= $dbcreated; ?> by <?= $dbcreatef." ".$dbcreatel; ?></li>
+                <li>Last Updated on <?= $dbupdated; ?></li>
             </ul>
-    	</article>
+        </div>
 
-    	<aside>
-    		<div class="sidebox">
-	    		<p>Assigned To</p> 
-	    		<p><?= $dbassignf." ".$dbassignl; ?></p> 
-	    		<br>
-				<p>Type:</p>
-				<p><?= $dbtype; ?></p>	
-	    		<br>
-				<p>Priority:</p>
-				<p><?= $dbpriorty; ?></p>	
-	    		<br>
-				<p>Status:</p>
-				<p><?= $dbstatus; ?></p>	
-    		</div>
-    	</aside>
 
-    	<div class="btn">
-    		<button type="submit" name = "closed" class="closed" id="closed" value=<?= $dbid; ?>>Marked as Closed</button>
-    		<br>
-    		<button type="submit" name = "progress" class="progress" id="progress" value=<?= $dbid; ?>>Marked In Progress</button>
-    	</div>
-    </main>
+    <div class="isu3">
+        <aside>
+        	<div class="sidebox">
+    	    	<p>Assigned To</p> 
+    	    	<p><?= $dbassignf." ".$dbassignl; ?></p> 
+    	    	<br>
+    			<p>Type:</p>
+    			<p><?= $dbtype; ?></p>	
+    	    	<br>
+    			<p>Priority:</p>
+    			<p><?= $dbpriorty; ?></p>	
+    	    	<br>
+    			<p>Status:</p>
+    			<p><?= $dbstatus; ?></p>	
+        	</div>
+        </aside>
+        
 
+        <div class="btn">
+        	<button type="submit" name = "closed" class="closed" id="closed" value=<?= $dbid; ?>>Marked as Closed</button>
+        	<br>
+        	<button type="submit" name = "progress" class="progress" id="progress" value=<?= $dbid; ?>>Marked In Progress</button>
+        </div>
+    </div>
+
+   
+
+
+
+	
 
 
 
