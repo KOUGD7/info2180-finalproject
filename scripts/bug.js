@@ -50,7 +50,6 @@ $( document ).ready(function() {
 
     
 
-
     $(document).on('click', '[name="newissue2"]', function(){
         httpRequest.onreadystatechange = IssueClick;
         httpRequest.open('GET', url + "NewIssue");
