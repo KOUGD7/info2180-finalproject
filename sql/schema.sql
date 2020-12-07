@@ -52,7 +52,7 @@ CREATE TABLE `Issues` (
 --
 INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Michael','Goldson','$2y$10$FeZi9GMiA90p1LUKc6o/K.Mbxyyeg6CN2rU6Crar/bfi2ONcDBaQK','admin@project2.com', CURDATE());
 
-INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Michael','Goldson','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin1@project2.com', CURDATE());
+INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Mark','Gold','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin1@project2.com', CURDATE());
 INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Deidre-Ann','Jemison','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin2@project2.com', CURDATE());
 INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Orlando','Williams','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin3@project2.com', CURDATE());
 INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Jhevoy','Jacas','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin4@project2.com', CURDATE());
