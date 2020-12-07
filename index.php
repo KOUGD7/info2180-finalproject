@@ -22,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $hidden === $formID) {
     $email = htmlentities($email);
     $pwd = htmlentities($pwd);
 
+
+
+
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
     $stmt = $conn->query("SELECT id, email, password FROM Users WHERE Users.email ='$email';");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
