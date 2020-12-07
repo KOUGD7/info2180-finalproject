@@ -18,38 +18,36 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $valid = False;
 
-    if(!preg_match("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$^", $firstname)){
-        echo "Firstname not valid!";
+    if(preg_match("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$^", $firstname)){
+       if(preg_match("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$^", $lastname)){
+            if(preg_match("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}^", $password)){
+                if(preg_match("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$^", $email)){
+                    $valid = True;
+                } 
+            }
+       }
     }
-    else if(!preg_match("^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$^", $lastname)){
-        echo "Lastname not valid!";
-    }
-    else if(!preg_match("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$^", $password)) {
-        echo "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters";
-    }
-    else if(!preg_match("^[a-zA-Z ]*$^", $email)){
-        echo "Must be in the following order: characters@characters.domain!";
-    }
-    else{
-        echo "User Added successfully!";
-        $valid = True;
-        }return $valid;
-
-    $firstname = filter_var($str, FILTER_SANITIZE_STRING);
-    $lastname = filter_var($str, FILTER_SANITIZE_STRING);
-    $email = filter_var($str, FILTER_SANITIZE_EMAIL);
+    
+    $firstname = filter_var($firstname, FILTER_SANITIZE_STRING);
+    $lastname = filter_var($lastname, FILTER_SANITIZE_STRING);
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
     try {
-    
-        $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO Users (firstname, lastname, password, email, date_joined) VALUES('$firstname', '$lastname', '$pwd', '$email', now())";
-        $conn->exec($sql);
+        if($valid){
+            $conn = new PDO("mysql:host=$host;dbname=$dbname", $sqlusername, $sqlpassword);
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "INSERT INTO Users (firstname, lastname, password, email, date_joined) VALUES('$firstname', '$lastname', '$pwd', '$email', now())";
+            $conn->exec($sql);
 
-        $message = "New record created successfully";
-        echo "<script>alert('$message');</script>";
-        
+            $message = "New record created successfully";
+            echo "<script>alert('$message');</script>";
+
+        }
+        else{
+            $message = "Submission Invalid!";
+            echo "<script>alert('$message');</script>";
+        }   
     } catch (PDOException $pe) {
         die($pe->getMessage());
     }
