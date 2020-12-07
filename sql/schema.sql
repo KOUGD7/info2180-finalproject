@@ -18,7 +18,6 @@ USE bugMeIssue;
 --
 -- Table structure for table `users`
 --
-
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users` (
   `id` int(15) NOT NULL auto_increment,
@@ -29,14 +28,6 @@ CREATE TABLE `Users` (
   `date_joined` datetime,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8mb4;
-
--- Admin User with password: 'Password123'. To match password requirements
-INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Michael','Goldson','$2y$10$FeZi9GMiA90p1LUKc6o/K.Mbxyyeg6CN2rU6Crar/bfi2ONcDBaQK','admin@project2.com', CURDATE());
-
-INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Michael','Goldson','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin1@project2.com', CURDATE());
-INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Deidre-Ann','Jemison','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin3@project2.com', CURDATE());
-INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Orlando','Williams','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin4@project2.com', CURDATE());
-INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Jhevoy','Jacas','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin5@project2.com', CURDATE());
 
 --
 -- Table structure for table `issues`
@@ -55,6 +46,17 @@ CREATE TABLE `Issues` (
   `updated` datetime,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Admin User with password: 'Password123'. To match password requirements
+--
+INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Michael','Goldson','$2y$10$FeZi9GMiA90p1LUKc6o/K.Mbxyyeg6CN2rU6Crar/bfi2ONcDBaQK','admin@project2.com', CURDATE());
+
+INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Michael','Goldson','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin1@project2.com', CURDATE());
+INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Deidre-Ann','Jemison','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin2@project2.com', CURDATE());
+INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Orlando','Williams','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin3@project2.com', CURDATE());
+INSERT INTO Users(firstname, lastname, password, email, date_joined) VALUES ('Jhevoy','Jacas','$2y$10$nsDFOWkT3/wdeawwaD6S8edglzCRcnX9jUlvu8QOZlyJXrna8TThq','admin4@project2.com', CURDATE());
+
 
 /*INSERT INTO `issues` VALUES ('Test','Random Test','Random','High','Pending','1','2','24-11-20 10:45:09','25-11-20 10:45:09');
 INSERT INTO `issues` VALUES ('Test','Random Test','Random','High','Pending','1','2','24-11-20 10:45:09','25-11-20 10:45:09');*/

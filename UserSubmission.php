@@ -24,7 +24,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $sql = "INSERT INTO Users (firstname, lastname, password, email, date_joined) VALUES('$firstname', '$lastname', '$pwd', '$email', now())";
         $conn->exec($sql);
 
-        echo "New record created successfully";
+        $message = "New record created successfully";
+        echo "<script>alert('$message');</script>";
         
     } catch (PDOException $pe) {
         die($pe->getMessage());
