@@ -14,7 +14,7 @@ $query = htmlentities($query);
 
 if ($query == "filtermy"){
   $sqlq = "SELECT Issues.id as Issueid, Users.id as uid, title, type, status, firstname, lastname, created
-  FROM Issues join Users on Issues.assigned_to = Users.id WHERE created_by = $uid";
+  FROM Issues join Users on Issues.assigned_to = Users.id WHERE assigned_to = $uid";
 }
 else if($query == "filteropen"){
   $sqlq = "SELECT Issues.id as Issueid, Users.id as uid, title, type, status, firstname, lastname, created
@@ -50,7 +50,23 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </td>
         
             <td><?= $row['type']; ?></td>
-            <td><?= $row['status']; ?></td>
+            
+            <td>
+              <?php if ($row['status'] == "IN PROGRESS"){
+                    $statcolor = "inprogress_c";
+                }
+                else if ($row['status'] == "CLOSED"){
+                    $statcolor = "closed_c";
+                }
+                else{
+                    $statcolor = "open_c";
+                }
+                ?>
+                <div id = <?= $statcolor; ?>>
+                    <?= $row['status']; ?>
+                </div>
+            </td>
+
             <td><?= $row['firstname']." ".$row['lastname']; ?></td>
             <td><?= $row['created']; ?></td>
           </tr>

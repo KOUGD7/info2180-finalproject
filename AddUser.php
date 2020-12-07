@@ -1,4 +1,4 @@
-<h1 class ="formheader">NEW USER </h1>
+<h1 class ="formheader">New User </h1>
     <form  action = "http://localhost/info2180-finalproject/UserSubmission.php" method="post" onsubmit="return validate();">
 
         <label for="fn">First Name:</label>

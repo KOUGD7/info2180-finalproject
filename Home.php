@@ -55,7 +55,21 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </td>
         
             <td><?= $row['type']; ?></td>
-            <td><?= $row['status']; ?></td>
+            <td>
+                <?php if ($row['status'] == "IN PROGRESS"){
+                    $statcolor = "inprogress_c";
+                }
+                else if ($row['status'] == "CLOSED"){
+                    $statcolor = "closed_c";
+                }
+                else{
+                    $statcolor = "open_c";
+                }
+                ?>
+                <div id = <?= $statcolor; ?>>
+                    <?= $row['status']; ?>
+                </div>
+            </td>
             <td><?= $row['firstname']." ".$row['lastname']; ?></td>
             <td><?= $row['created']; ?></td>
           </tr>

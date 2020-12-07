@@ -37,41 +37,74 @@ foreach ($results as $row):
     $dbstatus = $row['status'];
 endforeach;
 
+
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
+    $stmt = $conn->query("SELECT firstname, lastname FROM Users WHERE id = $dbassign");
+    $results2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} 
+
+catch (PDOException $pe) {
+    die($pe->getMessage());
+}
+
+foreach ($results2 as $row):
+    $dbassignf = $row['firstname'];
+    $dbassignl = $row['lastname'];
+endforeach;
+
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
+    $stmt = $conn->query("SELECT firstname, lastname FROM Users WHERE id = $dbcreatedby");
+    $results3 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} 
+
+catch (PDOException $pe) {
+    die($pe->getMessage());
+}
+
+foreach ($results3 as $row):
+    $dbcreatef = $row['firstname'];
+    $dbcreatel = $row['lastname'];
+endforeach;
+
 ?>
 
 <main class="xss-info">
     	<article>
-  			<h1><?= $row['title']; ?></h1>
-    		<p>Issue #<?= $row['id']; ?> </p>
+  			<h1><?= $dbtitle; ?></h1>
+    		<p>Issue #<?= $dbid; ?> </p>
 
-    		<p> <?= $row['description']; ?> </p>
+    		<p> <?= $dbdescrip; ?> </p>
 
     		<ul>
-            <li>Issue created on <?= $row['created']; ?> by <?= $row['created_by']; ?></li>
-            <li>Last Updated on <?= $row['updated']; ?></li>
+            <li>Issue created on <?= $dbcreated; ?> by <?= $dbcreatef." ".$dbcreatel; ?></li>
+            <li>Last Updated on <?= $dbupdated; ?></li>
             </ul>
     	</article>
 
     	<aside>
     		<div class="sidebox">
 	    		<p>Assigned To</p> 
-	    		<p><?= $row['assigned_to']; ?></p> 
+	    		<p><?= $dbassignf." ".$dbassignl; ?></p> 
 	    		<br>
 				<p>Type:</p>
-				<p><?= $row['type']; ?></p>	
+				<p><?= $dbtype; ?></p>	
 	    		<br>
 				<p>Priority:</p>
-				<p><?= $row['priority']; ?></p>	
+				<p><?= $dbpriorty; ?></p>	
 	    		<br>
 				<p>Status:</p>
-				<p><?= $row['status']; ?></p>	
+				<p><?= $dbstatus; ?></p>	
     		</div>
     	</aside>
 
     	<div class="btn">
-    		<button type="submit" name = "closed" class="closed" id="closed" value=<?= $row['id']; ?>>Marked as Closed</button>
+    		<button type="submit" name = "closed" class="closed" id="closed" value=<?= $dbid; ?>>Marked as Closed</button>
     		<br>
-    		<button type="submit" name = "progress" class="progress" id="progress" value=<?= $row['id']; ?>>Marked In Progress</button>
+    		<button type="submit" name = "progress" class="progress" id="progress" value=<?= $dbid; ?>>Marked In Progress</button>
     	</div>
     </main>
 

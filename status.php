@@ -20,7 +20,7 @@ $id = htmlentities($id);
 if ($query == "closed"){
 	try {
 		$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
-		$sql = "UPDATE Issues SET status ='CLOSED' WHERE id = $id";
+		$sql = "UPDATE Issues SET status ='CLOSED', updated = now() WHERE id = $id";
 		$conn->exec($sql);
 		#echo $sql;
 
@@ -34,7 +34,7 @@ if ($query == "closed"){
 else if ($query == "progress"){
 	try {
 		$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
-		$sql = "UPDATE Issues SET status ='IN PROGRESS' WHERE id = $id";
+		$sql = "UPDATE Issues SET status ='IN PROGRESS', updated = now() WHERE id = $id";
 		$conn->exec($sql);
 		
         $message = "Status Updated";

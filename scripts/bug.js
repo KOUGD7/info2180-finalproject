@@ -86,7 +86,7 @@ $( document ).ready(function() {
         var stat = "closed";
         var value = $(this).attr("value");
         var url = "http://localhost/info2180-finalproject/status.php?query=" + stat + "&id=" + value;
-        alert(url);
+        
         httpRequest.onreadystatechange = updatestat;
         httpRequest.open('GET', url);
         httpRequest.send();
@@ -97,7 +97,7 @@ $( document ).ready(function() {
         var stat = "progress";
         var value = $(this).attr("value");
         var url = "http://localhost/info2180-finalproject/status.php?query=" + stat + "&id=" + value;
-        alert(url);
+
         httpRequest.onreadystatechange = updatestat;
         httpRequest.open('GET', url);
         httpRequest.send();
