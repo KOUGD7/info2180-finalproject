@@ -22,7 +22,7 @@ if ($query == "closed"){
 		$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
 		$sql = "UPDATE Issues SET status ='CLOSED' WHERE id = $id";
 		$conn->exec($sql);
-		echo $sql;
+		#echo $sql;
 
         $message = "Status Updated";
         echo "<script>alert('$message');</script>";
@@ -36,6 +36,7 @@ else if ($query == "progress"){
 		$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $sqlusername, $sqlpassword);
 		$sql = "UPDATE Issues SET status ='IN PROGRESS' WHERE id = $id";
 		$conn->exec($sql);
+		
         $message = "Status Updated";
         echo "<script>alert('$message');</script>";
 	} 
