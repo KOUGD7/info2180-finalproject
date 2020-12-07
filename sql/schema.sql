@@ -27,7 +27,7 @@ CREATE TABLE `Users` (
   `email` varchar(55) NOT NULL default '',
   `date_joined` datetime,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Table structure for table `issues`
@@ -45,7 +45,7 @@ CREATE TABLE `Issues` (
   `created` datetime,
   `updated` datetime,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Admin User with password: 'Password123'. To match password requirements
