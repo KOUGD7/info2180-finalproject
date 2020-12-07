@@ -51,7 +51,11 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php foreach ($results as $row): ?>
           <tr>
-            <td><?= $row['title']; ?></td>
+
+            <td><?= "#".$row['id']; ?>
+            <a class="issuedetail" href=""><?= $row['title']; ?></a>
+            </td>
+
             <td><?= $row['type']; ?></td>
             <td><?= $row['status']; ?></td>
             <td><?= $row['assigned_to']; ?></td>
@@ -60,8 +64,6 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endforeach; ?>
     </table>
 </div>
-
-
   
 
     
