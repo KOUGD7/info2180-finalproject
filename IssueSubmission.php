@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $assignedTo = $_POST['assignedTo'];
     $type= $_POST['type'];
     $priority= $_POST['priority'];
-    $date = date('m/d/Y h:i:s', time());
+    
 
     #$assignedTo = 1;
 
@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $sql= "INSERT INTO Issues (title, description, type, priority, status, assigned_to, created_by, created, updated)
-                            VALUES('$title', '$description', '$type', '$priority', 'Open', $assignedTo, $uid, now(), now())";
+                            VALUES('$title', '$description', '$type', '$priority', 'OPEN', $assignedTo, $uid, now(), now())";
         $conn->exec($sql);
         $message = "New record created successfully";
         echo "<script>alert('$message');</script>";

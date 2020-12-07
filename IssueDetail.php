@@ -69,9 +69,9 @@ endforeach;
     	</aside>
 
     	<div class="btn">
-    		<button type="submit" class="btn1">Marked as Closed</button>
+    		<button type="submit" name = "closed" class="closed" id="closed" value=<?= $row['id']; ?>>Marked as Closed</button>
     		<br>
-    		<button type="submit" class="btn2">Marked In Progress</button>
+    		<button type="submit" name = "progress" class="progress" id="progress" value=<?= $row['id']; ?>>Marked In Progress</button>
     	</div>
     </main>
 
