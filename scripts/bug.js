@@ -33,6 +33,13 @@ $( document ).ready(function() {
         httpRequest.send();
     });
 
+    //NEW ISSUE AJAX (BUTTON ABOVE TABLE)
+    $(document).on('click', '[name="newissue2"]', function(){
+        httpRequest.onreadystatechange = UpdateResult;
+        httpRequest.open('GET', url + "NewIssue");
+        httpRequest.send();
+     });
+
 
     function UpdateResult() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
@@ -48,13 +55,7 @@ $( document ).ready(function() {
         }
     }
 
-    
 
-    $(document).on('click', '[name="newissue2"]', function(){
-        httpRequest.onreadystatechange = IssueClick;
-        httpRequest.open('GET', url + "NewIssue");
-        httpRequest.send();
-     });
 
      $(document).on('click', '[name="issuelink"]', function(){
         var value = $(this).attr("value");
