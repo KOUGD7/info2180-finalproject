@@ -191,6 +191,10 @@ table tr:hover {
     padding-top: 20px;
 }
 
+.filter :visited {
+    background: yellow;
+}
+
 
 /*----------------------------------------------*/
 

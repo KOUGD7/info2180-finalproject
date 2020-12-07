@@ -25,9 +25,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1 class ="formheader">Issues</h1>
         <div class="filterbar">
             <label>Filter by:</label>
-            <li><a href="">ALL</a></li>
-            <li><a href="">OPEN</a></li>
-            <li><a href="">MY TICKETS</a></li>
+            <li><a class="filter" id="filterall" name="filterall">ALL</a></li>
+            <li><a class="filter" id="filteropen" name="filteropen" >OPEN</a></li>
+            <li><a class="filter" id="filtermy" name="filtermy" >MY TICKETS</a></li>
         </div>
     </div>
     <div>
@@ -35,7 +35,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </div>
 
-<div class="issues">
+<div class="issues" id="tableissues">
     <table class="issueLog" id = "issuetab">
         <tr>
             <th>Title</th>

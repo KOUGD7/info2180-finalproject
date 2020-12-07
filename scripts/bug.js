@@ -14,57 +14,27 @@ $( document ).ready(function() {
 
     //HOME AJAX
     home.on('click', function() {
-        httpRequest.onreadystatechange = HomeClick;
+        httpRequest.onreadystatechange = UpdateResult;
         httpRequest.open('GET', url + "Home");
         httpRequest.send();
     });
 
-
-    function HomeClick() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                var response = httpRequest.responseText;
-                result.innerHTML = response;
-                      
-            } 
-            else {
-                console.log(httpRequest.status)
-                alert('There was a problem with the request.');
-             }
-        }
-    }
-
     //NEW ISSUE AJAX
     newissue.on('click', function() {
-        httpRequest.onreadystatechange = IssueClick;
+        httpRequest.onreadystatechange = UpdateResult;
         httpRequest.open('GET', url + "NewIssue");
         httpRequest.send();
     });
 
-
-    function IssueClick() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                var response = httpRequest.responseText;
-                result.innerHTML = response;
-                      
-            } 
-            else {
-                console.log(httpRequest.status)
-                alert('There was a problem with the request.');
-             }
-        }
-    }
-
     //ADD AJAX
     add.on('click', function() {
-        httpRequest.onreadystatechange = AddClick;
+        httpRequest.onreadystatechange = UpdateResult;
         httpRequest.open('GET', url + "Add");
         httpRequest.send();
     });
 
 
-    function AddClick() {
+    function UpdateResult() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
                 var response = httpRequest.responseText;
@@ -77,6 +47,8 @@ $( document ).ready(function() {
              }
         }
     }
+
+    
 
 
     $(document).on('click', '[name="newissue2"]', function(){
@@ -146,5 +118,28 @@ $( document ).ready(function() {
         }
     }
     
+
+    $(document).on('click', '[class="filter"]', function(){
+        var value = $(this).attr("name");
+        var url = "http://localhost/info2180-finalproject/filter.php?query="
+        httpRequest.onreadystatechange = getfilter;
+        httpRequest.open('GET', url + value);
+        httpRequest.send();
+
+     });
+
+     function getfilter() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                var response = httpRequest.responseText;
+                var tab =  document.querySelector("#tableissues");
+                tab.innerHTML = response;        
+            } 
+            else {
+                console.log(httpRequest.status)
+                alert('There was a problem with the request.');
+             }
+        }
+    }
 
 });
